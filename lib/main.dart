@@ -4,6 +4,7 @@ import 'package:bookshelf_website/screens/homeScreenPages/biWeeklyReadingsPage.d
 import 'package:bookshelf_website/screens/homeScreenPages/contactUsPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/introPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/upcomingEventsPage.dart';
+import 'package:bookshelf_website/screens/meetingNotesScreen.dart';
 import 'package:bookshelf_website/screens/pageNotFound.dart';
 import 'package:bookshelf_website/screens/resourcesScreen.dart';
 import 'package:bookshelf_website/screens/upcomingEventsScreen.dart';
@@ -32,7 +33,9 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/about-us': (context) => AboutUs(),
         '/events': (context) => UpcomingEvents(),
+        // '/contact-us' : (context) => ContactUsPage(size: size);
         '/resources': (context) => Resources(),
+        '/resources/meeting-notes': (context) => MeetingNotes(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (context) {

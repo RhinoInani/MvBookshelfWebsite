@@ -105,7 +105,9 @@ class UpcomingEventsPage extends StatelessWidget {
                   width: size.width * 0.05,
                 ),
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/resources/meeting-notes');
+                  },
                   child: Text(
                     "Meeting Notes",
                     style: TextStyle(

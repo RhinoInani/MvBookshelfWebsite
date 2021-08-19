@@ -39,9 +39,18 @@ class Resources extends StatelessWidget {
               ),
               ResourcesCard(
                 size: size,
-                destination: "/meetingnotes",
+                destination: "/resources/meeting-notes",
                 imagePath: 'assets/bookshelfBackground1.jpeg',
                 title: "Meeting Notes",
+              ),
+              SizedBox(
+                height: size.height * 0.03,
+              ),
+              ResourcesCard(
+                size: size,
+                destination: "/resources/readings",
+                imagePath: 'assets/bookshelfBackground2.jpeg',
+                title: "Readings",
               ),
             ],
           ),
@@ -72,7 +81,7 @@ class ResourcesCard extends StatelessWidget {
         Navigator.of(context).pushNamed("$destination");
       },
       child: Container(
-        padding: EdgeInsets.all(size.longestSide * 0.02),
+        padding: EdgeInsets.all(size.longestSide * 0.03),
         decoration: new BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: mainColor.withOpacity(0.2),
