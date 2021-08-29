@@ -1,16 +1,21 @@
-# bookshelf_website
+# The Monta Vista Bookshelf Website
 
-A new Flutter project.
+This is the official code for the Mv Bookshelf Website. 
 
-## Getting Started
+Monta Vista Bookshelf is an all inclusive book and reading discussion club. We hold weekly meeting every Friday during lunch, and can be found in building XYZ. Come and join us to feel included in a reading community and family. On top of this we hold bi-weekly readings, and many games throughout the year. This year we are striving to become a bigger and also more eventful club with many plans for future events! Hope to see you guys there!
 
-This project is a starting point for a Flutter application.
+* Written in Flutter web and uses Firebase Hosting along with Google Domains to be available for club members.
 
-A few resources to get you started if this is your first Flutter project:
+* Can be viewed at: www.mvbookshelf.com
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* Main Usages:
+  - View club data.
+  - Get correct links for the current readings. 
+  - View upcoming events their dates, and the event.
+  - Meet our officer team.
+  - Stay in touch with MV Bookshelf.
+  - And much more!
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Please report any bugs in the issues section, and happy reading!
+
+© Rohin Inani 2021
