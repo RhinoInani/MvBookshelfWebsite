@@ -1,5 +1,5 @@
 name: bookshelf_website
-description: A new Flutter project.
+description: The official website for the Monta Vista Bookshelf Club. MV Bookshelf is an inclusive reading and dicussion club, holding meetings every Friday during lunch.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -20,7 +20,9 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   coast: ^2.0.1
   animated_text_kit: ^4.2.1
-  sticky_footer_scrollview: ^1.1.0
+  gsheets: ^0.3.1
+  http: ^0.13.3
+#  sticky_footer_scrollview: ^1.1.0
 
 dev_dependencies:
   flutter_test:

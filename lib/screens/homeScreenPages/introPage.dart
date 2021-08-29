@@ -57,7 +57,7 @@ class _IntroPageState extends State<IntroPage> {
                         animatedTexts: [
                           TypewriterAnimatedText(
                             "Bookshelf",
-                            speed: Duration(milliseconds: 600),
+                            speed: Duration(milliseconds: 500),
                           ),
                         ],
                       ),

@@ -143,7 +143,9 @@ AppBar navbar(Size size, BuildContext context) {
         width: size.width * 0.01,
       ),
       TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('/contact-us');
+        },
         child: Text(
           "Contact Us",
           style: TextStyle(
