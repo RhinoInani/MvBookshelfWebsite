@@ -1,8 +1,10 @@
 import 'package:gsheets/gsheets.dart';
 
-import 'creds.dart'; //confidential file
-// for the safety of our users and me (lol) this file is
-// confidential so no one can access/alter our database
+import 'creds.dart';
+
+/// creds.dart is a confidential file
+/// for the safety of our users and me (lol) this file is
+///confidential so no one can access/alter our database
 
 class SheetsBackend {
   static final _gSheets = GSheets(credentials);

@@ -3,16 +3,28 @@ import 'dart:html' as html;
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mailto/mailto.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants.dart';
 
 class ContactUsPage extends StatelessWidget {
-  const ContactUsPage({
+  ContactUsPage({
     Key? key,
     required this.size,
   }) : super(key: key);
 
   final Size size;
+
+  launchMailto() async {
+    final mailtoLink = Mailto(
+      to: ['mvbookshelf@gmail.com'],
+    );
+    // Convert the Mailto instance into a string.
+    // Use either Dart's string interpolation
+    // or the toString() method.
+    await launch('$mailtoLink');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +74,9 @@ class ContactUsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    launchMailto();
+                  },
                   icon: Icon(
                     Icons.email,
                     color: secondColor,
@@ -80,6 +94,22 @@ class ContactUsPage extends StatelessWidget {
                   },
                   icon: FaIcon(
                     FontAwesomeIcons.instagram,
+                    color: secondColor,
+                  ),
+                  iconSize: size.height * 0.04,
+                  hoverColor: mainColor.withOpacity(0.3),
+                ),
+                SizedBox(
+                  width: size.width * 0.02,
+                ),
+                IconButton(
+                  onPressed: () {
+                    html.window.open(
+                        'https://github.com/RhinoInani/MvBookshelfWebsite',
+                        "_blank");
+                  },
+                  icon: FaIcon(
+                    FontAwesomeIcons.github,
                     color: secondColor,
                   ),
                   iconSize: size.height * 0.04,

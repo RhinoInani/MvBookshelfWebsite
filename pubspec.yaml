@@ -22,6 +22,8 @@ dependencies:
   animated_text_kit: ^4.2.1
   gsheets: ^0.3.1
   http: ^0.13.3
+  url_launcher: ^6.0.9
+  mailto: ^2.0.0
 #  sticky_footer_scrollview: ^1.1.0
 
 dev_dependencies:
@@ -33,3 +35,4 @@ flutter:
 
   assets:
     - assets/
+    - assets/people/

@@ -19,72 +19,104 @@ class _AboutUsState extends State<AboutUs> {
       title: "About Us",
       child: Scaffold(
         appBar: navbar(size, context),
-        body: SingleChildScrollView(
+        body: ListView.builder(
+          itemCount: headerAboutUs.length,
           padding: EdgeInsets.symmetric(
             horizontal: size.width * 0.1,
             vertical: size.height * 0.05,
           ),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+          itemBuilder: (context, int index) {
+            if (index == 0) {
+              return Column(
                 children: [
-                  Text(
-                    "About Us",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: mainColor,
-                      fontSize: size.longestSide * 0.024,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "About Us",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: mainColor,
+                          fontSize: size.longestSide * 0.024,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: size.height * 0.03,
+                  ),
+                  AboutUsCard(
+                    size: size,
+                    imageHeight: size.height * 0.25,
+                    imageWidth: size.width * 0.25,
+                    bodyText:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    imagePath: 'assets/bookshelfBackground4.jpeg',
+                    flipped: false,
+                    headerText: 'Meetings',
+                  ),
+                  SizedBox(
+                    height: size.height * 0.05,
+                  ),
+                  AboutUsCard(
+                    size: size,
+                    imageHeight: size.height * 0.2,
+                    imageWidth: size.width * 0.25,
+                    bodyText:
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    imagePath: 'assets/bookshelfBackground3.jpeg',
+                    flipped: false,
+                    headerText: 'Events',
+                  ),
+                  SizedBox(
+                    height: size.height * 0.03,
+                  ),
+                  Divider(
+                    thickness: 0.5,
+                    color: secondColor,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Our Team",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: mainColor,
+                          fontSize: size.longestSide * 0.024,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: size.height * 0.03),
+                    child: AboutUsCard(
+                      size: size,
+                      imageHeight: size.height * 0.2,
+                      imageWidth: size.width * 0.2,
+                      bodyText: textAboutUs[index],
+                      imagePath: imageAboutUs[index],
+                      flipped: false,
+                      headerText: headerAboutUs[index],
                     ),
                   ),
                 ],
-              ),
-              SizedBox(
-                height: size.height * 0.03,
-              ),
-              AboutUsCard(
-                size: size,
-                imageHeight: size.height * 0.25,
-                imageWidth: size.width * 0.25,
-                bodyText:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                imagePath: 'assets/bookshelfBackground4.jpeg',
-                flipped: false,
-                headerText: 'Meetings',
-              ),
-              SizedBox(
-                height: size.height * 0.05,
-              ),
-              AboutUsCard(
-                size: size,
-                imageHeight: size.height * 0.2,
-                imageWidth: size.width * 0.25,
-                bodyText:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                imagePath: 'assets/bookshelfBackground3.jpeg',
-                flipped: false,
-                headerText: 'Events',
-              ),
-              SizedBox(
-                height: size.height * 0.03,
-              ),
-              Divider(
-                thickness: 0.5,
-                color: secondColor,
-              ),
-              Padding(
-                padding: EdgeInsets.all(size.longestSide * 0.02),
-                child: Text(
-                  "Our Team",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: mainColor,
-                    fontSize: size.longestSide * 0.024,
-                  ),
+              );
+            } else {
+              return Padding(
+                padding: EdgeInsets.symmetric(vertical: size.height * 0.03),
+                child: AboutUsCard(
+                  size: size,
+                  imageHeight: size.height * 0.2,
+                  imageWidth: size.width * 0.2,
+                  bodyText: textAboutUs[index],
+                  imagePath: imageAboutUs[index],
+                  flipped: false,
+                  headerText: headerAboutUs[index],
                 ),
-              ),
-            ],
-          ),
+              );
+            }
+          },
         ),
       ),
     );

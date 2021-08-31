@@ -9,8 +9,11 @@
 .history
 .svn/
 
-#credentials/confidential
+# credentials/confidential
 /lib/components/creds.dart
+
+# image privacy
+/assets/people/
 
 # IntelliJ related
 *.iml
