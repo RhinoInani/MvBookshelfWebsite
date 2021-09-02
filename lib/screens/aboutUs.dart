@@ -75,6 +75,9 @@ class _AboutUsState extends State<AboutUs> {
                     thickness: 0.5,
                     color: secondColor,
                   ),
+                  SizedBox(
+                    height: size.height * 0.03,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -92,11 +95,11 @@ class _AboutUsState extends State<AboutUs> {
                     padding: EdgeInsets.symmetric(vertical: size.height * 0.03),
                     child: AboutUsCard(
                       size: size,
-                      imageHeight: size.height * 0.2,
-                      imageWidth: size.width * 0.2,
+                      imageHeight: size.height * 0.25,
+                      imageWidth: size.width * 0.25,
                       bodyText: textAboutUs[index],
                       imagePath: imageAboutUs[index],
-                      flipped: false,
+                      flipped: true,
                       headerText: headerAboutUs[index],
                     ),
                   ),
@@ -107,11 +110,11 @@ class _AboutUsState extends State<AboutUs> {
                 padding: EdgeInsets.symmetric(vertical: size.height * 0.03),
                 child: AboutUsCard(
                   size: size,
-                  imageHeight: size.height * 0.2,
-                  imageWidth: size.width * 0.2,
+                  imageHeight: size.height * 0.25,
+                  imageWidth: size.width * 0.25,
                   bodyText: textAboutUs[index],
                   imagePath: imageAboutUs[index],
-                  flipped: false,
+                  flipped: index % 2 == 0 ? true : false,
                   headerText: headerAboutUs[index],
                 ),
               );
@@ -153,15 +156,31 @@ class AboutUsCard extends StatelessWidget {
               children: [
                 Container(
                   width: size.width * 0.7 - imageWidth,
-                  child: Text(
-                    "$bodyText",
-                    style: TextStyle(fontSize: size.longestSide * 0.012),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "$headerText",
+                        style: TextStyle(
+                            color: mainColor,
+                            fontSize: size.longestSide * 0.017),
+                      ),
+                      SizedBox(
+                        height: size.height * 0.015,
+                      ),
+                      Text(
+                        "$bodyText",
+                        style: TextStyle(fontSize: size.longestSide * 0.012),
+                      ),
+                    ],
                   ),
                 ),
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(size.longestSide * 0.005),
                   child: Image.asset(
                     '$imagePath',
+                    fit: BoxFit.fitHeight,
                     height: imageHeight,
                     width: imageWidth,
                   ),
@@ -172,9 +191,11 @@ class AboutUsCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
+                  clipBehavior: Clip.antiAlias,
+                  borderRadius: BorderRadius.circular(size.longestSide * 0.005),
                   child: Image.asset(
                     '$imagePath',
+                    fit: BoxFit.fitHeight,
                     height: imageHeight,
                     width: imageWidth,
                   ),

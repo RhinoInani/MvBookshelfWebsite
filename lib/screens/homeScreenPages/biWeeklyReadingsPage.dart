@@ -34,7 +34,9 @@ class BiWeeklyReadingsPage extends StatelessWidget {
                     child: RichText(
                       text: TextSpan(
                           style: TextStyle(
-                              fontSize: size.height * 0.075, color: mainColor),
+                            fontSize: size.longestSide * 0.04,
+                            color: mainColor,
+                          ),
                           children: [
                             TextSpan(
                                 text: "Bi-Weekly\n",
@@ -52,7 +54,7 @@ class BiWeeklyReadingsPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: size.width * 0.05,
+                  width: size.width * 0.03,
                 ),
                 Container(
                   width: size.width * 0.3,
@@ -60,13 +62,14 @@ class BiWeeklyReadingsPage extends StatelessWidget {
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
+                      fontSize: size.longestSide * 0.013,
                     ),
                   ),
                 ),
               ],
             ),
             SizedBox(
-              height: size.height * 0.03,
+              height: size.height * 0.04,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,

@@ -27,6 +27,7 @@ List<String> imageAboutUs = [
   "assets/people/anna.jpeg",
   "assets/people/mulyn.jpeg",
   "assets/people/lavinia.jpeg",
+  "assets/people/roy.jpeg",
 ];
 
 List<String> textAboutUs = [
@@ -36,6 +37,7 @@ List<String> textAboutUs = [
   "Anna is currently a junior and MV Bookshelf’s social media manager. At Monta Vista, she is a member of the varsity field hockey team and is a sports editor for El Estoque. In her free time, she enjoys playing the piano, watching sunrises, and reading memoirs.",
   "Mulyn and is the project manager of the Monta Vista Bookshelf Club. Shes a huge reader and currently working on writing a fantasy novel of my own in my free time!",
   "Lavinia Lei is the Bookshelf’s curriculum head. She enjoys reading all sorts of books (read: fiction), yet her choice genre might just be realistic fiction. Then again, despite being a junior in high school, her favorite book is The Tale of Despereaux; perhaps children’s fantasy is her real number one choice deep down inside. She thinks that reading is underrated and that books are cool, but she is of the humble opinion that PTJ webtoons happen to be the very best. Books are still very cool, though.",
+  "Roy, is a Senior at Monta Vista High School and is the current head of projects. He loves meeting and collaborating with new people. Outside of reading, he's pretty interested in History so feel free to talk to him about that if you're interested too! ",
 ];
 
 List<String> headerAboutUs = [
@@ -45,4 +47,5 @@ List<String> headerAboutUs = [
   "Anna Jerolimov",
   "Mulyn Kim",
   "Lavania Lei",
+  "Roy Liao",
 ];

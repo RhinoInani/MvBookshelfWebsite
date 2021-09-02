@@ -1,7 +1,7 @@
 import 'package:bookshelf_website/constants.dart';
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   const CustomTextField({
     Key? key,
     required this.header,
@@ -20,25 +20,32 @@ class CustomTextField extends StatelessWidget {
   final double height;
 
   @override
+  _CustomTextFieldState createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  String errorText = "";
+
+  @override
   Widget build(BuildContext context) {
     return Container(
-      height: height,
-      padding: EdgeInsets.all(size.height * 0.02),
+      height: widget.height,
+      padding: EdgeInsets.all(widget.size.height * 0.02),
       child: TextFormField(
-        controller: controller,
-        keyboardType: textInputType,
+        controller: widget.controller,
+        keyboardType: widget.textInputType,
         cursorColor: Colors.black,
         decoration: InputDecoration(
-          labelText: "$header",
-          hintText: "$hint",
+          labelText: "${widget.header}",
+          hintText: "${widget.hint}",
           labelStyle: TextStyle(
             color: Colors.black,
-            fontSize: size.height * 0.02,
+            fontSize: widget.size.height * 0.02,
           ),
           floatingLabelBehavior: FloatingLabelBehavior.auto,
           contentPadding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.1,
-            vertical: size.height * 0.03,
+            horizontal: widget.size.width * 0.1,
+            vertical: widget.size.height * 0.03,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15),
@@ -52,17 +59,44 @@ class CustomTextField extends StatelessWidget {
             borderSide: BorderSide(color: mainColor),
             gapPadding: 10,
           ),
-          errorStyle: TextStyle(color: Colors.red),
-          errorBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-            color: Colors.red,
-          )),
-          focusedErrorBorder: UnderlineInputBorder(
+          errorText: errorText == "" ? null : errorText,
+          errorStyle: TextStyle(color: Colors.red[400]),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
             borderSide: BorderSide(
-              color: Colors.red,
+              color: Colors.red[400]!,
             ),
+            gapPadding: 10,
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: BorderSide(
+              color: Colors.red[400]!,
+            ),
+            gapPadding: 10,
           ),
         ),
+        onChanged: (string) {
+          try {
+            bool emailValid;
+            widget.textInputType == TextInputType.emailAddress
+                ? emailValid = RegExp(
+                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                    .hasMatch(string.trim())
+                : emailValid = true;
+            emailValid
+                ? setState(() {
+                    errorText = "";
+                  })
+                : setState(() {
+                    errorText = "Please enter a valid email";
+                  });
+          } catch (FormatException) {
+            setState(() {
+              errorText = "Please enter a valid email";
+            });
+          }
+        },
       ),
     );
   }

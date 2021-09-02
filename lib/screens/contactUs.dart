@@ -32,13 +32,18 @@ class _ContactUsState extends State<ContactUs> {
             ),
             child: Column(
               children: [
-                CustomTextField(
-                  header: "Name",
-                  controller: name,
-                  hint: "Please enter your name",
-                  textInputType: TextInputType.text,
-                  size: size,
-                  height: size.height * 0.2,
+                MouseRegion(
+                  onEnter: (point) async {
+                    await SheetsBackend.init();
+                  },
+                  child: CustomTextField(
+                    header: "Name",
+                    controller: name,
+                    hint: "Please enter your name",
+                    textInputType: TextInputType.text,
+                    size: size,
+                    height: size.height * 0.2,
+                  ),
                 ),
                 CustomTextField(
                   header: "Email",
@@ -48,16 +53,44 @@ class _ContactUsState extends State<ContactUs> {
                   size: size,
                   height: size.height * 0.2,
                 ),
-                TextButton(
-                    onPressed: () async {
-                      final submission = {
-                        "name": name.text,
-                        "email": email.text,
-                      };
-                      await SheetsBackend.init();
-                      await SheetsBackend.insert([submission]);
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    child: Container(
+                      padding: EdgeInsets.all(size.height * 0.02),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        border: Border.all(
+                          color: Colors.grey[400]!,
+                          width: 0.7,
+                        ),
+                      ),
+                      width: size.width * 0.85,
+                      height: size.height * 0.07,
+                      child: Center(
+                        child: Text(
+                          "Submit",
+                        ),
+                      ),
+                    ),
+                    onTap: () async {
+                      bool emailValid = RegExp(
+                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                          .hasMatch(email.text.trim());
+                      if (emailValid &&
+                          name.text.trim().length >= 1 &&
+                          email.text.trim().length >= 1) {
+                        final submission = {
+                          "name": name.text.trim(),
+                          "email": email.text.trim(),
+                        };
+                        await SheetsBackend.insert([submission]);
+                        name.clear();
+                        email.clear();
+                      }
                     },
-                    child: Text("Submit")),
+                  ),
+                ),
               ],
             ),
           ),

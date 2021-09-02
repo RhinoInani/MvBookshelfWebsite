@@ -31,7 +31,7 @@ class _IntroPageState extends State<IntroPage> {
             Crab(
               tag: "text",
               child: Container(
-                width: widget.size.width * 0.33,
+                width: widget.size.width * 0.28,
                 height: widget.size.height * 0.1,
                 child: Row(
                   children: [
@@ -39,7 +39,7 @@ class _IntroPageState extends State<IntroPage> {
                       "Mv ",
                       style: TextStyle(
                         color: Colors.white70,
-                        fontSize: widget.size.width * 0.045,
+                        fontSize: widget.size.longestSide * 0.04,
                       ),
                     ),
                     SizedBox(
@@ -47,7 +47,7 @@ class _IntroPageState extends State<IntroPage> {
                     ),
                     DefaultTextStyle(
                       style: TextStyle(
-                        fontSize: widget.size.width * 0.045,
+                        fontSize: widget.size.longestSide * 0.04,
                         color: mainColor,
                       ),
                       child: AnimatedTextKit(
