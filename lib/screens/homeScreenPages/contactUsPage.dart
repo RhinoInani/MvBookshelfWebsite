@@ -16,14 +16,22 @@ class ContactUsPage extends StatelessWidget {
 
   final Size size;
 
-  launchMailto() async {
+  void _launchMailClient() async {
+    const mailUrl = 'mailto:mvbookshelf.com';
+    try {
+      await launch(mailUrl);
+    } catch (e) {}
+  }
+
+  Future<void> launchMailto() async {
     final mailtoLink = Mailto(
-      to: ['mvbookshelf@gmail.com'],
+      to: [
+        'mvbookshelf@gmail.com',
+      ],
     );
-    // Convert the Mailto instance into a string.
-    // Use either Dart's string interpolation
-    // or the toString() method.
-    await launch('$mailtoLink');
+
+    // await launch('$mailtoLink');
+    await html.window.open('$mailtoLink', "_blank");
   }
 
   @override
@@ -38,16 +46,16 @@ class ContactUsPage extends StatelessWidget {
           children: [
             Center(
               child: Crab(
+                flightShuttleBuilder: textFlightShuttleBuilder,
                 tag: "text",
                 child: Container(
-                  height: size.height * 0.18,
+                  height: size.height * 0.15,
                   width: size.width * 0.3,
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
                         style: TextStyle(
-                            fontSize:
-                                MediaQuery.of(context).size.height * 0.075,
+                            fontSize: size.longestSide * 0.037,
                             color: mainColor),
                         children: [
                           TextSpan(
@@ -67,21 +75,23 @@ class ContactUsPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * 0.03,
+              height: size.longestSide * 0.02,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                  onPressed: () {
-                    launchMailto();
+                  onPressed: () async {
+                    // await launchMailto();
+                    _launchMailClient();
                   },
                   icon: Icon(
                     Icons.email,
                     color: secondColor,
+                    size: size.longestSide * 0.025,
                   ),
-                  iconSize: size.height * 0.04,
+                  iconSize: size.longestSide * 0.025,
                   hoverColor: mainColor.withOpacity(0.3),
                 ),
                 SizedBox(
@@ -95,8 +105,9 @@ class ContactUsPage extends StatelessWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.instagram,
                     color: secondColor,
+                    size: size.longestSide * 0.025,
                   ),
-                  iconSize: size.height * 0.04,
+                  iconSize: size.longestSide * 0.025,
                   hoverColor: mainColor.withOpacity(0.3),
                 ),
                 SizedBox(
@@ -111,8 +122,9 @@ class ContactUsPage extends StatelessWidget {
                   icon: FaIcon(
                     FontAwesomeIcons.github,
                     color: secondColor,
+                    size: size.longestSide * 0.025,
                   ),
-                  iconSize: size.height * 0.04,
+                  iconSize: size.longestSide * 0.025,
                   hoverColor: mainColor.withOpacity(0.3),
                 ),
               ],

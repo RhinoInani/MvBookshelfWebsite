@@ -1,14 +1,13 @@
 import 'package:bookshelf_website/configure_web.dart';
-import 'package:bookshelf_website/screens/aboutUs.dart';
-import 'package:bookshelf_website/screens/contactUs.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/biWeeklyReadingsPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/contactUsPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/introPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/upcomingEventsPage.dart';
-import 'package:bookshelf_website/screens/meetingNotes.dart';
-import 'package:bookshelf_website/screens/pageNotFound.dart';
-import 'package:bookshelf_website/screens/resources.dart';
-import 'package:bookshelf_website/screens/upcomingEvents.dart';
+import 'package:bookshelf_website/screens/navBarPages/aboutUs.dart';
+import 'package:bookshelf_website/screens/navBarPages/resources.dart';
+import 'package:bookshelf_website/screens/navBarPages/upcomingEvents.dart';
+import 'package:bookshelf_website/screens/other/meetingNotes.dart';
+import 'package:bookshelf_website/screens/other/pageNotFound.dart';
 import 'package:coast/coast.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/about-us': (context) => AboutUs(),
         '/events': (context) => UpcomingEvents(),
-        '/contact-us': (context) => ContactUs(),
+        // '/contact-us': (context) => ContactUs(),
         '/resources': (context) => Resources(),
         '/resources/meeting-notes': (context) => MeetingNotes(),
       },
@@ -81,6 +80,9 @@ class HomeScreen extends StatelessWidget {
             Beach(builder: (context) => ContactUsPage(size: size)),
           ],
           observers: [
+            CrabController(),
+            CrabController(),
+            CrabController(),
             CrabController(),
           ],
         ),

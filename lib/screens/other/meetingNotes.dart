@@ -1,6 +1,6 @@
 import 'package:bookshelf_website/components/navbar.dart';
 import 'package:bookshelf_website/constants.dart';
-import 'package:bookshelf_website/screens/upcomingEvents.dart';
+import 'package:bookshelf_website/screens/navBarPages/upcomingEvents.dart';
 import 'package:flutter/material.dart';
 
 class MeetingNotes extends StatelessWidget {

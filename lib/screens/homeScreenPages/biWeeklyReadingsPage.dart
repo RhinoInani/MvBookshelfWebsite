@@ -28,6 +28,7 @@ class BiWeeklyReadingsPage extends StatelessWidget {
               children: [
                 Crab(
                   tag: "text",
+                  flightShuttleBuilder: textFlightShuttleBuilder,
                   child: Container(
                     height: size.height * 0.22,
                     width: size.width * 0.24,

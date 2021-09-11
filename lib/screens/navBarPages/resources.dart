@@ -1,7 +1,7 @@
 import 'package:bookshelf_website/components/navbar.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import '../../constants.dart';
 
 class Resources extends StatelessWidget {
   const Resources({Key? key}) : super(key: key);

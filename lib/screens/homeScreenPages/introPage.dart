@@ -29,6 +29,7 @@ class _IntroPageState extends State<IntroPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Crab(
+              flightShuttleBuilder: textFlightShuttleBuilder,
               tag: "text",
               child: Container(
                 width: widget.size.width * 0.28,

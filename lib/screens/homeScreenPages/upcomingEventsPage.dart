@@ -27,30 +27,29 @@ class UpcomingEventsPage extends StatelessWidget {
               children: [
                 Crab(
                   tag: "text",
-                  child: Center(
-                    child: Container(
-                      width: size.width * 0.3,
-                      height: size.height * 0.1,
-                      child: RichText(
-                        text: TextSpan(
-                            style: TextStyle(
-                              fontSize: size.longestSide * 0.04,
-                              color: mainColor,
-                            ),
-                            children: [
-                              TextSpan(
-                                  text: "Constant ",
-                                  style: TextStyle(
-                                    color: Colors.white70,
-                                  )),
-                              TextSpan(
-                                text: "Events",
+                  flightShuttleBuilder: textFlightShuttleBuilder,
+                  child: Container(
+                    width: size.width * 0.3,
+                    height: size.height * 0.1,
+                    child: RichText(
+                      text: TextSpan(
+                          style: TextStyle(
+                            fontSize: size.longestSide * 0.04,
+                            color: mainColor,
+                          ),
+                          children: [
+                            TextSpan(
+                                text: "Constant ",
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                  color: Colors.white70,
+                                )),
+                            TextSpan(
+                              text: "Events",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
                               ),
-                            ]),
-                      ),
+                            ),
+                          ]),
                     ),
                   ),
                 ),
