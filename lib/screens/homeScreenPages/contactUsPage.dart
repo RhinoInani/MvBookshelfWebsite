@@ -17,7 +17,7 @@ class ContactUsPage extends StatelessWidget {
   final Size size;
 
   void _launchMailClient() async {
-    const mailUrl = 'mailto:mvbookshelf.com';
+    const mailUrl = 'mailto:the.mvbookshelf.com';
     try {
       await launch(mailUrl);
     } catch (e) {}
@@ -26,12 +26,12 @@ class ContactUsPage extends StatelessWidget {
   Future<void> launchMailto() async {
     final mailtoLink = Mailto(
       to: [
-        'mvbookshelf@gmail.com',
+        'the.mvbookshelf@gmail.com',
       ],
     );
 
     // await launch('$mailtoLink');
-    await html.window.open('$mailtoLink', "_blank");
+    html.window.open('$mailtoLink', "_blank");
   }
 
   @override

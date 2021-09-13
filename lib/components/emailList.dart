@@ -13,6 +13,7 @@ class SheetsBackend {
   static Future init() async {
     final spreadsheet = await _gSheets.spreadsheet(spreadSheetId);
     emailList = await getWorksheet(spreadsheet, title: "Email List");
+    return true;
   }
 
   static Future<Worksheet> getWorksheet(

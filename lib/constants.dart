@@ -56,6 +56,8 @@ List<String> headerAboutUs = [
   "Rohin Inani",
 ];
 
+String recentSignUp = "";
+
 Widget textFlightShuttleBuilder(
   BuildContext flightContext,
   Animation<double> animation,
@@ -64,7 +66,7 @@ Widget textFlightShuttleBuilder(
   BuildContext? toCrabContext,
 ) {
   final curvedAnimation =
-      CurvedAnimation(parent: animation, curve: Curves.easeInOutQuart);
+      CurvedAnimation(parent: animation, curve: Curves.easeInOutCirc);
   return Stack(
     clipBehavior: Clip.none,
     children: [

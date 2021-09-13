@@ -4,10 +4,12 @@ import 'package:bookshelf_website/screens/homeScreenPages/contactUsPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/introPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/upcomingEventsPage.dart';
 import 'package:bookshelf_website/screens/navBarPages/aboutUs.dart';
+import 'package:bookshelf_website/screens/navBarPages/joinUs.dart';
 import 'package:bookshelf_website/screens/navBarPages/resources.dart';
 import 'package:bookshelf_website/screens/navBarPages/upcomingEvents.dart';
 import 'package:bookshelf_website/screens/other/meetingNotes.dart';
 import 'package:bookshelf_website/screens/other/pageNotFound.dart';
+import 'package:bookshelf_website/screens/other/signUpCompleted.dart';
 import 'package:coast/coast.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +35,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => HomeScreen(),
         '/about-us': (context) => AboutUs(),
         '/events': (context) => UpcomingEvents(),
-        // '/contact-us': (context) => ContactUs(),
+        '/join': (context) => JoinUs(),
+        '/join/thank-you': (context) => SignUpCompleted(),
         '/resources': (context) => Resources(),
         '/resources/meeting-notes': (context) => MeetingNotes(),
       },
@@ -87,17 +90,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      // PageView(
-      //   scrollDirection: Axis.vertical,
-      //   physics: AlwaysScrollableScrollPhysics(),
-      //   pageSnapping: true,
-      //   children: [
-      //     IntroPage(size: size),
-      //     BiWeeklyReadingsPage(size: size),
-      //     UpcomingEventsPage(size: size),
-      //     ContactUsPage(size: size),
-      //   ],
-      // ),
     );
   }
 }

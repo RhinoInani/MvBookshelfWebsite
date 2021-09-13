@@ -10,6 +10,7 @@ class CustomTextField extends StatefulWidget {
     required this.textInputType,
     required this.size,
     required this.height,
+    // required this.error,
   }) : super(key: key);
 
   final String? header;
@@ -18,6 +19,7 @@ class CustomTextField extends StatefulWidget {
   final Size size;
   final TextEditingController? controller;
   final double height;
+  // final bool error;
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -30,7 +32,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     return Container(
       height: widget.height,
-      padding: EdgeInsets.all(widget.size.height * 0.02),
+      padding: EdgeInsets.all(widget.size.longestSide * 0.02),
       child: TextFormField(
         controller: widget.controller,
         keyboardType: widget.textInputType,
@@ -39,9 +41,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
           labelText: "${widget.header}",
           hintText: "${widget.hint}",
           labelStyle: TextStyle(
-            color: Colors.black,
-            fontSize: widget.size.height * 0.02,
-          ),
+              color: secondColor, fontSize: widget.size.longestSide * 0.015),
+          hintStyle: TextStyle(
+              color: secondColor, fontSize: widget.size.longestSide * 0.015),
           floatingLabelBehavior: FloatingLabelBehavior.auto,
           contentPadding: EdgeInsets.symmetric(
             horizontal: widget.size.width * 0.1,
@@ -76,13 +78,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
             gapPadding: 10,
           ),
         ),
-        onChanged: (string) {
+        onEditingComplete: () {
           try {
             bool emailValid;
             widget.textInputType == TextInputType.emailAddress
                 ? emailValid = RegExp(
                         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                    .hasMatch(string.trim())
+                    .hasMatch(widget.controller!.text.trim())
                 : emailValid = true;
             emailValid
                 ? setState(() {

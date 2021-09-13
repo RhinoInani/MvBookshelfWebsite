@@ -168,6 +168,32 @@ AppBar navbar(Size size, BuildContext context) {
       SizedBox(
         width: size.width * 0.01,
       ),
+      TextButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed('/join');
+        },
+        child: Text(
+          "Join Us",
+          style: TextStyle(
+            fontSize: size.longestSide * 0.013,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        style: ButtonStyle(
+          foregroundColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+            if (states.contains(MaterialState.focused)) return secondColor;
+            if (states.contains(MaterialState.hovered)) return mainColor;
+            if (states.contains(MaterialState.pressed)) return mainColor;
+            return secondColor;
+          }),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+          overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
+        ),
+      ),
+      SizedBox(
+        width: size.width * 0.01,
+      ),
     ],
   );
 }
