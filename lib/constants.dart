@@ -90,3 +90,5 @@ Widget textFlightShuttleBuilder(
     ],
   );
 }
+
+String currentScreen = "home";

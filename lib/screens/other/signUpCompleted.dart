@@ -1,11 +1,19 @@
 import 'package:bookshelf_website/components/highlightButtonStyle.dart';
 import 'package:bookshelf_website/components/navbar.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants.dart';
 
 class SignUpCompleted extends StatelessWidget {
   const SignUpCompleted({Key? key}) : super(key: key);
+
+  void _launchMailClient() async {
+    const mailUrl = 'mailto:mv.thebookshelf@gmail.com';
+    try {
+      await launch(mailUrl);
+    } catch (e) {}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,15 +79,23 @@ class SignUpCompleted extends StatelessWidget {
                     fontSize: size.longestSide * 0.014,
                   ),
                 ),
-                Text(
-                  "the.mvbookshelf.com",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: mainColor,
-                    decorationColor: secondColor,
-                    decoration: TextDecoration.underline,
-                    decorationThickness: 0.7,
-                    fontSize: size.longestSide * 0.017,
+                MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      _launchMailClient();
+                    },
+                    child: Text(
+                      "mv.thebookshelf@gmail.com",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: mainColor,
+                        decorationColor: secondColor,
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 0.7,
+                        fontSize: size.longestSide * 0.017,
+                      ),
+                    ),
                   ),
                 ),
                 SizedBox(

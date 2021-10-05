@@ -12,7 +12,10 @@ AppBar navbar(Size size, BuildContext context) {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          Navigator.of(context).pushNamed('/');
+          if (currentScreen != "home") {
+            Navigator.of(context).pushNamed('/');
+          }
+          currentScreen = "home";
         },
         child: Row(
           children: [
@@ -38,7 +41,10 @@ AppBar navbar(Size size, BuildContext context) {
       ),
       TextButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/');
+          if (currentScreen != "home") {
+            Navigator.of(context).pushNamed('/');
+          }
+          currentScreen = "home";
         },
         child: Text(
           "Home",
@@ -50,7 +56,8 @@ AppBar navbar(Size size, BuildContext context) {
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return secondColor;
+            if (states.contains(MaterialState.focused))
+              return currentScreen == "home" ? mainColor : secondColor;
             if (states.contains(MaterialState.hovered)) return mainColor;
             if (states.contains(MaterialState.pressed)) return mainColor;
             return secondColor;
@@ -64,7 +71,10 @@ AppBar navbar(Size size, BuildContext context) {
       ),
       TextButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/about-us');
+          if (currentScreen != "aboutus") {
+            Navigator.of(context).pushNamed('/about-us');
+          }
+          currentScreen = "aboutus";
         },
         child: Text(
           "About us",
@@ -76,7 +86,8 @@ AppBar navbar(Size size, BuildContext context) {
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return secondColor;
+            if (states.contains(MaterialState.focused))
+              return currentScreen == "aboutus" ? mainColor : secondColor;
             if (states.contains(MaterialState.hovered)) return mainColor;
             if (states.contains(MaterialState.pressed)) return mainColor;
             return secondColor;
@@ -90,6 +101,7 @@ AppBar navbar(Size size, BuildContext context) {
       ),
       TextButton(
         onPressed: () {
+          currentScreen = "events";
           Navigator.of(context).pushNamed('/events');
         },
         child: Text(
@@ -102,7 +114,8 @@ AppBar navbar(Size size, BuildContext context) {
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return secondColor;
+            if (states.contains(MaterialState.focused))
+              return currentScreen == "events" ? mainColor : secondColor;
             if (states.contains(MaterialState.hovered)) return mainColor;
             if (states.contains(MaterialState.pressed)) return mainColor;
             return secondColor;
@@ -116,7 +129,9 @@ AppBar navbar(Size size, BuildContext context) {
       ),
       TextButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/resources');
+          if (currentScreen != "resources")
+            Navigator.of(context).pushNamed('/resources');
+          currentScreen = "resources";
         },
         child: Text(
           "Resources",
@@ -128,7 +143,8 @@ AppBar navbar(Size size, BuildContext context) {
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return secondColor;
+            if (states.contains(MaterialState.focused))
+              return currentScreen == "resources" ? mainColor : secondColor;
             if (states.contains(MaterialState.hovered)) {
               return mainColor;
             }
@@ -144,7 +160,10 @@ AppBar navbar(Size size, BuildContext context) {
       ),
       TextButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/contact-us');
+          if (currentScreen != "contactus") {
+            Navigator.of(context).pushNamed('/contact-us');
+          }
+          currentScreen = "contactus";
         },
         child: Text(
           "Contact Us",
@@ -156,7 +175,8 @@ AppBar navbar(Size size, BuildContext context) {
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return secondColor;
+            if (states.contains(MaterialState.focused))
+              return currentScreen == "contactus" ? mainColor : secondColor;
             if (states.contains(MaterialState.hovered)) return mainColor;
             if (states.contains(MaterialState.pressed)) return mainColor;
             return secondColor;
@@ -170,7 +190,10 @@ AppBar navbar(Size size, BuildContext context) {
       ),
       TextButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/join');
+          if (currentScreen != "join") {
+            Navigator.of(context).pushNamed('/join');
+          }
+          currentScreen = "join";
         },
         child: Text(
           "Join Us",
@@ -182,7 +205,8 @@ AppBar navbar(Size size, BuildContext context) {
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused)) return secondColor;
+            if (states.contains(MaterialState.focused))
+              return currentScreen == "join" ? mainColor : secondColor;
             if (states.contains(MaterialState.hovered)) return mainColor;
             if (states.contains(MaterialState.pressed)) return mainColor;
             return secondColor;

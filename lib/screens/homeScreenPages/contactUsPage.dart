@@ -17,7 +17,7 @@ class ContactUsPage extends StatelessWidget {
   final Size size;
 
   void _launchMailClient() async {
-    const mailUrl = 'mailto:the.mvbookshelf.com';
+    const mailUrl = 'mailto:mv.thebookshelf@gmail.com';
     try {
       await launch(mailUrl);
     } catch (e) {}
