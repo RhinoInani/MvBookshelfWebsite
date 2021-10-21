@@ -92,3 +92,19 @@ Widget textFlightShuttleBuilder(
 }
 
 String currentScreen = "home";
+
+List<String> bookDriveFaqQuestions = [
+  "Should we make an appointment to drop off books?",
+  "Is there any restriction on what type of books and the quality of books we can donate?",
+  "Which organization are the books being donated to?",
+  "What’s the drop off process?",
+  "Who do we contact if we have questions?",
+];
+
+List<String> bookDriveFaqAnswers = [
+  "Nope! Anytime during the week of October 25th (10/25 - 10/29), just drop off your books in the library or Room B211. There will be designated boxes where donations can be placed. If you can’t find the boxes, kindly ask the librarian or Ms. Rose!",
+  "The books donated can range from old to new. However, the book needs to be intact; the books should not have broken bindings, ripped pages, water damage, etc. Additionally, the books should also be school appropriate as we are donating these to a charity that aids homeless families.",
+  "We are donating the books to Hamilton Families, a charity that helps Bay Area families move out of homelessness and aid their transition :)).",
+  "You can either drop your used/new books off in B211 during our meeting on Monday, October 25th, or throughout the week (10/25 - 10/29) into the boxes labeled for the book drive in the library.",
+  "Email mv.thebookshelf@gmail.com or DM @mvbookshelf with any questions!",
+];

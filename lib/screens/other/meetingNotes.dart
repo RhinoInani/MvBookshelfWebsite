@@ -41,10 +41,13 @@ class MeetingNotes extends StatelessWidget {
                     height: size.height * 0.03,
                   ),
                   UpcomingEventsCard(
-                      size: size,
-                      title: "${meetingNotesTitle[index]}",
-                      bodyText: "${meetingNotesBody[index]}",
-                      date: "${meetingNotesDate[index]}"),
+                    size: size,
+                    title: "${meetingNotesTitle[index]}",
+                    bodyText: "${meetingNotesBody[index]}",
+                    date: "${meetingNotesDate[index]}",
+                    button: false,
+                    buttonPress: () {},
+                  ),
                 ],
               );
             } else {
@@ -54,10 +57,13 @@ class MeetingNotes extends StatelessWidget {
                     height: size.height * 0.03,
                   ),
                   UpcomingEventsCard(
-                      size: size,
-                      title: "${meetingNotesTitle[index]}",
-                      bodyText: "${meetingNotesBody[index]}",
-                      date: "${meetingNotesDate[index]}"),
+                    size: size,
+                    title: "${meetingNotesTitle[index]}",
+                    bodyText: "${meetingNotesBody[index]}",
+                    date: "${meetingNotesDate[index]}",
+                    button: false,
+                    buttonPress: () {},
+                  ),
                 ],
               );
             }

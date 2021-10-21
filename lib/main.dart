@@ -8,6 +8,7 @@ import 'package:bookshelf_website/screens/navBarPages/contactUs.dart';
 import 'package:bookshelf_website/screens/navBarPages/joinUs.dart';
 import 'package:bookshelf_website/screens/navBarPages/resources.dart';
 import 'package:bookshelf_website/screens/navBarPages/upcomingEvents.dart';
+import 'package:bookshelf_website/screens/other/bookDrive.dart';
 import 'package:bookshelf_website/screens/other/meetingNotes.dart';
 import 'package:bookshelf_website/screens/other/pageNotFound.dart';
 import 'package:bookshelf_website/screens/other/signUpCompleted.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/resources': (context) => Resources(),
         '/resources/meeting-notes': (context) => MeetingNotes(),
         '/contact-us': (context) => ContactUs(),
+        '/book-drive': (context) => BookDrive(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (context) {
