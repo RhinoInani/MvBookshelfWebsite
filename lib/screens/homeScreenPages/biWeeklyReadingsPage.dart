@@ -30,8 +30,7 @@ class BiWeeklyReadingsPage extends StatelessWidget {
                   tag: "text",
                   flightShuttleBuilder: textFlightShuttleBuilder,
                   child: Container(
-                    height: size.height * 0.22,
-                    width: size.width * 0.24,
+                    width: size.longestSide * 0.24,
                     child: RichText(
                       text: TextSpan(
                           style: TextStyle(
@@ -58,9 +57,9 @@ class BiWeeklyReadingsPage extends StatelessWidget {
                   width: size.width * 0.03,
                 ),
                 Container(
-                  width: size.width * 0.3,
+                  width: size.width < 300 ? size.width * 0.2 : size.width * 0.3,
                   child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "Along with traditional book discussions, we host activity meetings where YOU will have the opportunity to participate in creative writing, win fun prizes in book-related trivia competitions, and plan community-oriented activities.",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: size.longestSide * 0.013,

@@ -80,6 +80,7 @@ class HomeScreen extends StatelessWidget {
           controller: _coastController,
           scrollDirection: Axis.vertical,
           dragStartBehavior: DragStartBehavior.down,
+          clipBehavior: Clip.antiAlias,
           beaches: [
             Beach(builder: (context) => IntroPage(size: size)),
             Beach(builder: (context) => BiWeeklyReadingsPage(size: size)),

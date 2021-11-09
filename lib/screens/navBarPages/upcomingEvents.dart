@@ -45,7 +45,7 @@ class _UpcomingEventsState extends State<UpcomingEvents> {
                 size: size,
                 title: "Weekly Meetings",
                 bodyText:
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "You can find us in B212, or Ms. Rose’s room. Stop by Mondays at lunch!",
                 date: "Every other Monday during Lunch",
                 button: false,
                 buttonPress: () {},
@@ -101,24 +101,27 @@ class UpcomingEventsCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          Column(
             children: [
-              Column(
+              Row(
                 children: [
-                  Container(
-                    width: size.width * 0.7,
-                    child: Text(
-                      "$title",
-                      style: TextStyle(
-                        color: mainColor,
-                        fontSize: size.longestSide * 0.017,
-                        fontWeight: FontWeight.w500,
-                      ),
+                  Text(
+                    "$title",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      color: mainColor,
+                      fontSize: size.longestSide * 0.017,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(
-                    height: size.height * 0.005,
-                  ),
+                ],
+              ),
+              SizedBox(
+                height: size.height * 0.005,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   date == ''
                       ? Container()
                       : Text(
@@ -129,28 +132,27 @@ class UpcomingEventsCard extends StatelessWidget {
                             fontSize: size.longestSide * 0.01,
                           ),
                         ),
+                  button
+                      ? OutlinedButton(
+                          onPressed: () {
+                            buttonPress.call();
+                          },
+                          child: Text(
+                            "More information",
+                            style: TextStyle(
+                              color: secondColor,
+                              fontSize: size.longestSide * 0.01,
+                            ),
+                          ),
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            side: BorderSide(color: mainColor),
+                          ),
+                        )
+                      : Container(),
                 ],
               ),
-              Spacer(),
-              button
-                  ? OutlinedButton(
-                      onPressed: () {
-                        buttonPress.call();
-                      },
-                      child: Text(
-                        "More information",
-                        style: TextStyle(
-                          color: secondColor,
-                          fontSize: size.longestSide * 0.01,
-                        ),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        side: BorderSide(color: mainColor),
-                      ),
-                    )
-                  : Container(),
             ],
           ),
           SizedBox(

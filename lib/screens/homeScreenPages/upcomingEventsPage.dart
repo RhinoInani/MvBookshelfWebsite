@@ -29,8 +29,7 @@ class UpcomingEventsPage extends StatelessWidget {
                   tag: "text",
                   flightShuttleBuilder: textFlightShuttleBuilder,
                   child: Container(
-                    width: size.width * 0.3,
-                    height: size.height * 0.1,
+                    width: size.longestSide * 0.3,
                     child: RichText(
                       text: TextSpan(
                           style: TextStyle(
@@ -54,12 +53,12 @@ class UpcomingEventsPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: size.height * 0.06,
+                  height: size.longestSide * 0.015,
                 ),
                 Container(
-                  width: size.width * 0.3,
+                  width: size.longestSide * 0.3,
                   child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                    "We regularly host events, including author talks, book drives, essay writing sessions, and fundraising for local bookstores. As a Bookshelf member, you will have the opportunity to lead and participate in these projects!",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,

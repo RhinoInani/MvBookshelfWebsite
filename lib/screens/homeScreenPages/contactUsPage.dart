@@ -49,7 +49,7 @@ class ContactUsPage extends StatelessWidget {
                 flightShuttleBuilder: textFlightShuttleBuilder,
                 tag: "text",
                 child: Container(
-                  height: size.height * 0.15,
+                  height: size.height * 0.19,
                   width: size.width * 0.3,
                   child: RichText(
                     textAlign: TextAlign.center,
@@ -75,7 +75,7 @@ class ContactUsPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.longestSide * 0.02,
+              height: size.width * 0.02,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
