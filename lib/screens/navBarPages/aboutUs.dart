@@ -50,7 +50,7 @@ class _AboutUsState extends State<AboutUs> {
                     imageHeight: size.height * 0.25,
                     imageWidth: size.width * 0.25,
                     bodyText:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        "Along with traditional book discussions, we host activity meetings where YOU will have the opportunity to participate in creative writing, win fun prizes in book-related trivia competitions, and plan community-oriented activities.",
                     imagePath: 'assets/bookshelfBackground4.jpeg',
                     flipped: false,
                     headerText: 'Meetings',
@@ -63,7 +63,7 @@ class _AboutUsState extends State<AboutUs> {
                     imageHeight: size.height * 0.2,
                     imageWidth: size.width * 0.25,
                     bodyText:
-                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                        "We regularly host events, including author talks, book drives, essay writing sessions, and fundraising for local bookstores. As a Bookshelf member, you will have the opportunity to lead and participate in these projects!",
                     imagePath: 'assets/bookshelfBackground3.jpeg',
                     flipped: false,
                     headerText: 'Events',
@@ -180,7 +180,7 @@ class AboutUsCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(size.longestSide * 0.005),
                   child: Image.asset(
                     '$imagePath',
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.scaleDown,
                     height: imageHeight,
                     width: imageWidth,
                   ),
@@ -195,7 +195,7 @@ class AboutUsCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(size.longestSide * 0.005),
                   child: Image.asset(
                     '$imagePath',
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.scaleDown,
                     height: imageHeight,
                     width: imageWidth,
                   ),
