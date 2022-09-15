@@ -12,6 +12,12 @@ class AboutUs extends StatefulWidget {
 
 class _AboutUsState extends State<AboutUs> {
   @override
+  void initState() {
+    currentScreen = "aboutus";
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Title(
@@ -50,8 +56,8 @@ class _AboutUsState extends State<AboutUs> {
                     imageHeight: size.height * 0.25,
                     imageWidth: size.width * 0.25,
                     bodyText:
-                        "Along with traditional book discussions, we host activity meetings where YOU will have the opportunity to participate in creative writing, win fun prizes in book-related trivia competitions, and plan community-oriented activities.",
-                    imagePath: 'assets/bookshelfBackground4.jpeg',
+                        "The Monta Vista Bookshelf is a safe, accepting environment for reading enthusiasts of all backgrounds to cultivate their passion. We aim to embrace diversity and create belonging, recognizing that it results in the best ideas. As pioneers who identify new opportunities and ways of operating, we aspire to deliver on our plans.",
+                    imagePath: 'assets/aboutUs1.png',
                     flipped: false,
                     headerText: 'Meetings',
                   ),
@@ -63,9 +69,9 @@ class _AboutUsState extends State<AboutUs> {
                     imageHeight: size.height * 0.2,
                     imageWidth: size.width * 0.25,
                     bodyText:
-                        "We regularly host events, including author talks, book drives, essay writing sessions, and fundraising for local bookstores. As a Bookshelf member, you will have the opportunity to lead and participate in these projects!",
-                    imagePath: 'assets/bookshelfBackground3.jpeg',
-                    flipped: false,
+                        "Club activities range from active, intellectual in-club reading discussions about short stories and novels that focus on social justice issues and fiction. Additionally, we host writing workshops with prestigious mentors, guest speaker panels with accomplished professionals in the writing and publishing fields, as well as immersion opportunities with the book community through book drives and book fairs.",
+                    imagePath: 'assets/aboutUs2.png',
+                    flipped: true,
                     headerText: 'Events',
                   ),
                   SizedBox(
@@ -164,6 +170,7 @@ class AboutUsCard extends StatelessWidget {
                         "$headerText",
                         style: TextStyle(
                             color: mainColor,
+                            fontWeight: FontWeight.bold,
                             fontSize: size.longestSide * 0.017),
                       ),
                       SizedBox(
@@ -210,6 +217,7 @@ class AboutUsCard extends StatelessWidget {
                         "$headerText",
                         style: TextStyle(
                             color: mainColor,
+                            fontWeight: FontWeight.bold,
                             fontSize: size.longestSide * 0.017),
                       ),
                       SizedBox(

@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bookshelf_website/components/highlightButtonStyle.dart';
-import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../constants.dart';
 
@@ -28,62 +28,37 @@ class _IntroPageState extends State<IntroPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Crab(
-              flightShuttleBuilder: textFlightShuttleBuilder,
-              tag: "text",
-              child: Container(
-                width: widget.size.width * 0.28,
-                height: widget.size.height * 0.1,
-                child: Row(
-                  children: [
-                    Text(
-                      "Mv ",
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: widget.size.longestSide * 0.04,
-                      ),
-                    ),
-                    SizedBox(
-                      width: widget.size.width * 0.01,
-                    ),
-                    DefaultTextStyle(
-                      style: TextStyle(
-                        fontSize: widget.size.longestSide * 0.04,
-                        color: mainColor,
-                      ),
-                      child: AnimatedTextKit(
-                        repeatForever: false,
-                        totalRepeatCount: 1,
-                        isRepeatingAnimation: false,
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                            "Bookshelf",
-                            speed: Duration(milliseconds: 500),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Mv ",
+                  style: GoogleFonts.quicksand(
+                    color: Colors.white70,
+                    fontSize: widget.size.longestSide * 0.055,
+                  ),
                 ),
-                // RichText(
-                //   text: TextSpan(
-                //       style: TextStyle(
-                //           fontSize: size.width * 0.045, color: mainColor),
-                //       children: [
-                //         TextSpan(
-                //             text: "Mv",
-                //             style: TextStyle(
-                //               color: Colors.white70,
-                //             )),
-                //         TextSpan(
-                //           text: " Bookshelf",
-                //           style: TextStyle(
-                //             fontWeight: FontWeight.bold,
-                //           ),
-                //         ),
-                //       ]),
-                // ),
-              ),
+                SizedBox(
+                  width: widget.size.width * 0.01,
+                ),
+                DefaultTextStyle(
+                  style: GoogleFonts.quicksand(
+                    fontSize: widget.size.longestSide * 0.055,
+                    color: mainColor,
+                  ),
+                  child: AnimatedTextKit(
+                    repeatForever: false,
+                    totalRepeatCount: 1,
+                    isRepeatingAnimation: false,
+                    animatedTexts: [
+                      TypewriterAnimatedText(
+                        "Bookshelf",
+                        speed: Duration(milliseconds: 400),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: widget.size.height * 0.03,
@@ -94,12 +69,15 @@ class _IntroPageState extends State<IntroPage> {
               children: [
                 OutlinedButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/about-us');
+                    if (currentScreen != "aboutus") {
+                      Navigator.of(context).pushNamed('/about-us');
+                    }
+                    currentScreen = "aboutus";
                   },
                   child: Text(
                     "About Us",
                     style: TextStyle(
-                      fontSize: widget.size.width * 0.013,
+                      fontSize: widget.size.longestSide * 0.015,
                       backgroundColor: Colors.transparent,
                       color: secondColor,
                     ),
@@ -110,13 +88,18 @@ class _IntroPageState extends State<IntroPage> {
                   width: widget.size.width * 0.02,
                 ),
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (currentScreen != "join") {
+                      Navigator.of(context).pushNamed('/join');
+                    }
+                    currentScreen = "join";
+                  },
                   child: Text(
                     "Join Us",
                     style: TextStyle(
-                      fontSize: widget.size.width * 0.013,
+                      fontSize: widget.size.longestSide * 0.015,
                       backgroundColor: Colors.transparent,
-                      color: secondColor,
+                      color: Colors.white70,
                     ),
                   ),
                   style: ButtonStyle(
@@ -135,9 +118,27 @@ class _IntroPageState extends State<IntroPage> {
                     overlayColor:
                         MaterialStateProperty.all<Color>(Colors.transparent),
                   ),
-                )
+                ),
               ],
             ),
+            SizedBox(
+              height: widget.size.height * 0.03,
+            ),
+            Container(
+              width: widget.size.width * 0.4,
+              child: FittedBox(
+                child: Text(
+                  widget.size.width < 450
+                      ? "We can't wait to\n hear your story!"
+                      : "We can't wait to hear your story!",
+                  style: TextStyle(
+                    color: secondColor,
+                    fontSize: widget.size.longestSide * 0.05,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

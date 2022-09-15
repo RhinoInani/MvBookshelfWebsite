@@ -1,15 +1,12 @@
 import 'package:bookshelf_website/configure_web.dart';
-import 'package:bookshelf_website/screens/homeScreenPages/biWeeklyReadingsPage.dart';
+import 'package:bookshelf_website/screens/homeScreenPages/aboutUsHome.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/contactUsPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/introPage.dart';
 import 'package:bookshelf_website/screens/homeScreenPages/upcomingEventsPage.dart';
 import 'package:bookshelf_website/screens/navBarPages/aboutUs.dart';
 import 'package:bookshelf_website/screens/navBarPages/contactUs.dart';
 import 'package:bookshelf_website/screens/navBarPages/joinUs.dart';
-import 'package:bookshelf_website/screens/navBarPages/resources.dart';
-import 'package:bookshelf_website/screens/navBarPages/upcomingEvents.dart';
-import 'package:bookshelf_website/screens/other/bookDrive.dart';
-import 'package:bookshelf_website/screens/other/meetingNotes.dart';
+import 'package:bookshelf_website/screens/navBarPages/meetings.dart';
 import 'package:bookshelf_website/screens/other/pageNotFound.dart';
 import 'package:bookshelf_website/screens/other/signUpCompleted.dart';
 import 'package:coast/coast.dart';
@@ -36,13 +33,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => HomeScreen(),
         '/about-us': (context) => AboutUs(),
-        '/events': (context) => UpcomingEvents(),
         '/join': (context) => JoinUs(),
         '/join/thank-you': (context) => SignUpCompleted(),
-        '/resources': (context) => Resources(),
-        '/resources/meeting-notes': (context) => MeetingNotes(),
+        '/meetings': (context) => Meetings(),
         '/contact-us': (context) => ContactUs(),
-        '/book-drive': (context) => BookDrive(),
       },
       onUnknownRoute: (settings) {
         return MaterialPageRoute(builder: (context) {
@@ -83,12 +77,11 @@ class HomeScreen extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           beaches: [
             Beach(builder: (context) => IntroPage(size: size)),
-            Beach(builder: (context) => BiWeeklyReadingsPage(size: size)),
+            Beach(builder: (context) => AboutUsHome(size: size)),
             Beach(builder: (context) => UpcomingEventsPage(size: size)),
             Beach(builder: (context) => ContactUsPage(size: size)),
           ],
           observers: [
-            CrabController(),
             CrabController(),
             CrabController(),
             CrabController(),

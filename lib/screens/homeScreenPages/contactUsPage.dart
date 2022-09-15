@@ -1,5 +1,6 @@
 import 'dart:html' as html;
 
+import 'package:bookshelf_website/components/highlightButtonStyle.dart';
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -49,17 +50,16 @@ class ContactUsPage extends StatelessWidget {
                 flightShuttleBuilder: textFlightShuttleBuilder,
                 tag: "text",
                 child: Container(
-                  height: size.height * 0.19,
-                  width: size.width * 0.3,
+                  width: size.width * 0.5,
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
                         style: TextStyle(
-                            fontSize: size.longestSide * 0.037,
+                            fontSize: size.longestSide * 0.04,
                             color: mainColor),
                         children: [
                           TextSpan(
-                              text: "Contact\n",
+                              text: "Contact ",
                               style: TextStyle(
                                 color: Colors.white70,
                               )),
@@ -75,7 +75,38 @@ class ContactUsPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.width * 0.02,
+              height: size.longestSide * 0.02,
+            ),
+            CircleAvatar(
+              radius: size.longestSide * 0.05,
+              backgroundColor: mainColor.withOpacity(0.8),
+              child: Image.asset(
+                'assets/logo.png',
+                fit: BoxFit.fill,
+              ),
+            ),
+            SizedBox(
+              height: size.longestSide * 0.02,
+            ),
+            OutlinedButton(
+              onPressed: () {
+                if (currentScreen != "join") {
+                  Navigator.of(context).pushNamed('/join');
+                }
+                currentScreen = "join";
+              },
+              child: Text(
+                "Sign Up",
+                style: TextStyle(
+                  fontSize: size.longestSide * 0.02,
+                  backgroundColor: Colors.transparent,
+                  color: secondColor,
+                ),
+              ),
+              style: highlightButtonStyle(),
+            ),
+            SizedBox(
+              height: size.longestSide * 0.02,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,

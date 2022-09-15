@@ -28,28 +28,26 @@ class UpcomingEventsPage extends StatelessWidget {
                 Crab(
                   tag: "text",
                   flightShuttleBuilder: textFlightShuttleBuilder,
-                  child: Container(
-                    width: size.longestSide * 0.3,
-                    child: RichText(
-                      text: TextSpan(
-                          style: TextStyle(
-                            fontSize: size.longestSide * 0.04,
-                            color: mainColor,
+                  child: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                        style: TextStyle(
+                          fontSize: size.longestSide * 0.04,
+                          color: mainColor,
+                        ),
+                        children: [
+                          TextSpan(
+                            text: "Meeting Dates ",
                           ),
-                          children: [
-                            TextSpan(
-                                text: "Constant ",
-                                style: TextStyle(
-                                  color: Colors.white70,
-                                )),
-                            TextSpan(
-                              text: "Events",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          TextSpan(
+                            text:
+                                size.width < 450 ? "\n& Agendas" : "& Agendas",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
-                          ]),
-                    ),
+                          ),
+                        ]),
                   ),
                 ),
                 SizedBox(
@@ -62,7 +60,7 @@ class UpcomingEventsPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: size.longestSide * 0.013,
+                      fontSize: size.longestSide * 0.015,
                     ),
                   ),
                 ),
@@ -76,43 +74,16 @@ class UpcomingEventsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Recent Events",
-                    style: TextStyle(
-                      fontSize: size.width * 0.013,
-                      backgroundColor: Colors.transparent,
-                      color: secondColor,
-                    ),
-                  ),
-                  style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.focused))
-                        return secondColor;
-                      if (states.contains(MaterialState.hovered))
-                        return mainColor;
-                      if (states.contains(MaterialState.pressed))
-                        return mainColor;
-                      return secondColor;
-                    }),
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(mainColor),
-                    overlayColor:
-                        MaterialStateProperty.all<Color>(Colors.transparent),
-                  ),
-                ),
-                SizedBox(
-                  width: size.width * 0.05,
-                ),
-                OutlinedButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/resources/meeting-notes');
+                    if (currentScreen != "meetings") {
+                      Navigator.of(context).pushNamed('/meetings');
+                    }
+                    currentScreen = "meetings";
                   },
                   child: Text(
-                    "Meeting Notes",
+                    "Meetings",
                     style: TextStyle(
-                      fontSize: size.width * 0.013,
+                      fontSize: size.longestSide * 0.015,
                       backgroundColor: Colors.transparent,
                       color: secondColor,
                     ),

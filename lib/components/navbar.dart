@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
 
@@ -23,49 +24,61 @@ AppBar navbar(Size size, BuildContext context) {
               'assets/logo.png',
               width: size.width * 0.05,
             ),
-            Text(
-              "Mv Bookshelf",
-              style: TextStyle(
-                color: mainColor,
-                fontWeight: FontWeight.bold,
-                fontSize: size.longestSide * 0.018,
-              ),
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                  style: GoogleFonts.quicksand(
+                      fontSize: size.longestSide * 0.02, color: mainColor),
+                  children: [
+                    TextSpan(
+                        text: "Mv ",
+                        style: TextStyle(
+                          color: secondColor,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    TextSpan(
+                      text: "Bookshelf",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ]),
             ),
           ],
         ),
       ),
     ),
     actions: [
-      SizedBox(
-        width: size.width * 0.01,
-      ),
-      TextButton(
-        onPressed: () {
-          if (currentScreen != "home") {
-            Navigator.of(context).pushNamed('/');
-          }
-          currentScreen = "home";
-        },
-        child: Text(
-          "Home",
-          style: TextStyle(
-            fontSize: size.longestSide * 0.013,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused))
-              return currentScreen == "home" ? mainColor : secondColor;
-            if (states.contains(MaterialState.hovered)) return mainColor;
-            if (states.contains(MaterialState.pressed)) return mainColor;
-            return secondColor;
-          }),
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-          overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
-        ),
-      ),
+      // SizedBox(
+      //   width: size.width * 0.01,
+      // ),
+      // TextButton(
+      //   onPressed: () {
+      //     if (currentScreen != "home") {
+      //       Navigator.of(context).pushNamed('/');
+      //     }
+      //     currentScreen = "home";
+      //   },
+      //   child: Text(
+      //     "Home",
+      //     style: TextStyle(
+      //       fontSize: size.longestSide * 0.013,
+      //       fontWeight: FontWeight.w500,
+      //     ),
+      //   ),
+      //   style: ButtonStyle(
+      //     foregroundColor: MaterialStateProperty.resolveWith<Color>(
+      //         (Set<MaterialState> states) {
+      //       if (states.contains(MaterialState.focused))
+      //         return currentScreen == "home" ? mainColor : secondColor;
+      //       if (states.contains(MaterialState.hovered)) return mainColor;
+      //       if (states.contains(MaterialState.pressed)) return mainColor;
+      //       return secondColor;
+      //     }),
+      //     backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+      //     overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
+      //   ),
+      // ),
       SizedBox(
         width: size.width * 0.01,
       ),
@@ -96,16 +109,45 @@ AppBar navbar(Size size, BuildContext context) {
           overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
         ),
       ),
+      // SizedBox(
+      //   width: size.width * 0.01,
+      // ),
+      // TextButton(
+      //   onPressed: () {
+      //     currentScreen = "events";
+      //     Navigator.of(context).pushNamed('/events');
+      //   },
+      //   child: Text(
+      //     "Upcoming Events",
+      //     style: TextStyle(
+      //       fontSize: size.longestSide * 0.013,
+      //       fontWeight: FontWeight.w500,
+      //     ),
+      //   ),
+      //   style: ButtonStyle(
+      //     foregroundColor: MaterialStateProperty.resolveWith<Color>(
+      //         (Set<MaterialState> states) {
+      //       if (states.contains(MaterialState.focused))
+      //         return currentScreen == "events" ? mainColor : secondColor;
+      //       if (states.contains(MaterialState.hovered)) return mainColor;
+      //       if (states.contains(MaterialState.pressed)) return mainColor;
+      //       return secondColor;
+      //     }),
+      //     backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+      //     overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
+      //   ),
+      // ),
       SizedBox(
         width: size.width * 0.01,
       ),
       TextButton(
         onPressed: () {
-          currentScreen = "events";
-          Navigator.of(context).pushNamed('/events');
+          if (currentScreen != "meetings")
+            Navigator.of(context).pushNamed('/meetings');
+          currentScreen = "meetings";
         },
         child: Text(
-          "Upcoming Events",
+          "Meetings",
           style: TextStyle(
             fontSize: size.longestSide * 0.013,
             fontWeight: FontWeight.w500,
@@ -115,36 +157,7 @@ AppBar navbar(Size size, BuildContext context) {
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
             if (states.contains(MaterialState.focused))
-              return currentScreen == "events" ? mainColor : secondColor;
-            if (states.contains(MaterialState.hovered)) return mainColor;
-            if (states.contains(MaterialState.pressed)) return mainColor;
-            return secondColor;
-          }),
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-          overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
-        ),
-      ),
-      SizedBox(
-        width: size.width * 0.01,
-      ),
-      TextButton(
-        onPressed: () {
-          if (currentScreen != "resources")
-            Navigator.of(context).pushNamed('/resources');
-          currentScreen = "resources";
-        },
-        child: Text(
-          "Resources",
-          style: TextStyle(
-            fontSize: size.longestSide * 0.013,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-            if (states.contains(MaterialState.focused))
-              return currentScreen == "resources" ? mainColor : secondColor;
+              return currentScreen == "meetings" ? mainColor : secondColor;
             if (states.contains(MaterialState.hovered)) {
               return mainColor;
             }
