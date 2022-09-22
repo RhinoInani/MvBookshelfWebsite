@@ -3,6 +3,7 @@ import 'package:bookshelf_website/components/highlightButtonStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../components/backgroundColorBlur.dart';
 import '../../constants.dart';
 
 class IntroPage extends StatefulWidget {
@@ -142,17 +143,7 @@ class _IntroPageState extends State<IntroPage> {
           ],
         ),
       ),
-      decoration: new BoxDecoration(
-        color: mainColor.withOpacity(0.2),
-        image: new DecorationImage(
-          fit: BoxFit.cover,
-          colorFilter: new ColorFilter.mode(
-            mainColor.withOpacity(0.2),
-            BlendMode.dstATop,
-          ),
-          image: AssetImage('assets/bookshelfBackground1.jpeg'),
-        ),
-      ),
+      decoration: buildBackgroundColorFilter("bookshelfBackground1.jpeg"),
     );
   }
 }

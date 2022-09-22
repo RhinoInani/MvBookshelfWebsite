@@ -1,3 +1,4 @@
+import 'package:bookshelf_website/components/backgroundColorBlur.dart';
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 
@@ -14,77 +15,66 @@ class AboutUsHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height - size.height * 0.08,
-      width: size.width,
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Crab(
-              tag: "text",
-              flightShuttleBuilder: textFlightShuttleBuilder,
-              child: RichText(
-                text: TextSpan(
-                    style: TextStyle(
-                      fontSize: size.longestSide * 0.04,
-                      color: mainColor,
-                    ),
-                    children: [
-                      TextSpan(
-                          text: "About ",
-                          style: TextStyle(
-                            color: Colors.white70,
-                          )),
-                      TextSpan(
-                        text: "Us",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
+        height: size.height - size.height * 0.08,
+        width: size.width,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Crab(
+                tag: "text",
+                flightShuttleBuilder: textFlightShuttleBuilder,
+                child: RichText(
+                  text: TextSpan(
+                      style: TextStyle(
+                        fontSize: size.longestSide * 0.04,
+                        color: mainColor,
                       ),
-                    ]),
+                      children: [
+                        TextSpan(
+                            text: "About ",
+                            style: TextStyle(
+                              color: Colors.white70,
+                            )),
+                        TextSpan(
+                          text: "Us",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ]),
+                ),
               ),
-            ),
-            SizedBox(
-              height: size.height * 0.04,
-            ),
-            Flex(
-              direction: size.width < 450 ? Axis.horizontal : Axis.vertical,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                AvatarText(
-                  size: size,
-                  text:
-                      "The Monta Vista Bookshelf is a safe, accepting environment for reading enthusiasts of all backgrounds to cultivate their passion. We aim to embrace diversity and create belonging, recognizing that it results in the best ideas. As pioneers who identify new opportunities and ways of operating, we aspire to deliver on our plans.",
-                  image: "aboutUs1.png",
-                ),
-                SizedBox(
-                  height: size.height * 0.04,
-                  width: size.width * 0.04,
-                ),
-                AvatarText(
-                  size: size,
-                  text:
-                      "Club activities range from active, intellectual in-club reading discussions about short stories and novels that focus on social justice issues and fiction. Additionally, we host writing workshops with prestigious mentors, guest speaker panels with accomplished professionals in the writing and publishing fields, as well as immersion opportunities with the book community through book drives and book fairs.",
-                  image: "aboutUs2.png",
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-      decoration: new BoxDecoration(
-        color: mainColor.withOpacity(0.2),
-        image: new DecorationImage(
-          fit: BoxFit.cover,
-          colorFilter: new ColorFilter.mode(
-            mainColor.withOpacity(0.2),
-            BlendMode.dstATop,
+              SizedBox(
+                height: size.height * 0.04,
+              ),
+              Flex(
+                direction: size.width < 450 ? Axis.horizontal : Axis.vertical,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  AvatarText(
+                    size: size,
+                    text:
+                        "The Monta Vista Bookshelf is a safe, accepting environment for reading enthusiasts of all backgrounds to cultivate their passion. We aim to embrace diversity and create belonging, recognizing that it results in the best ideas. As pioneers who identify new opportunities and ways of operating, we aspire to deliver on our plans.",
+                    image: "aboutUs1.png",
+                  ),
+                  SizedBox(
+                    height: size.height * 0.04,
+                    width: size.width * 0.04,
+                  ),
+                  AvatarText(
+                    size: size,
+                    text:
+                        "Club activities range from active, intellectual in-club reading discussions about short stories and novels that focus on social justice issues and fiction. Additionally, we host writing workshops with prestigious mentors, guest speaker panels with accomplished professionals in the writing and publishing fields, as well as immersion opportunities with the book community through book drives and book fairs.",
+                    image: "aboutUs2.png",
+                  ),
+                ],
+              ),
+            ],
           ),
-          image: AssetImage('assets/bookshelfBackground2.jpeg'),
         ),
-      ),
-    );
+        decoration: buildBackgroundColorFilter("bookshelfBackground2.jpeg"));
   }
 }
 

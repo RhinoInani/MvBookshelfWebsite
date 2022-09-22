@@ -1,11 +1,12 @@
 import 'dart:html' as html;
 
+import 'package:bookshelf_website/components/backgroundColorBlur.dart';
 import 'package:bookshelf_website/components/highlightButtonStyle.dart';
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mailto/mailto.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../constants.dart';
 
@@ -20,7 +21,7 @@ class ContactUsPage extends StatelessWidget {
   void _launchMailClient() async {
     const mailUrl = 'mailto:mv.thebookshelf@gmail.com';
     try {
-      await launch(mailUrl);
+      await launchUrlString(mailUrl);
     } catch (e) {}
   }
 
@@ -163,17 +164,7 @@ class ContactUsPage extends StatelessWidget {
           ],
         ),
       ),
-      decoration: new BoxDecoration(
-        color: mainColor.withOpacity(0.2),
-        image: new DecorationImage(
-          fit: BoxFit.cover,
-          colorFilter: new ColorFilter.mode(
-            mainColor.withOpacity(0.2),
-            BlendMode.dstATop,
-          ),
-          image: AssetImage('assets/bookshelfBackground4.jpeg'),
-        ),
-      ),
+      decoration: buildBackgroundColorFilter("bookshelfBackground4.jpeg"),
     );
   }
 }

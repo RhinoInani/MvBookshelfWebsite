@@ -20,10 +20,14 @@ AppBar navbar(Size size, BuildContext context) {
         },
         child: Row(
           children: [
-            Image.asset(
-              'assets/logo.png',
-              width: size.width * 0.05,
-            ),
+            size.width < 450
+                ? SizedBox(
+                    width: 10,
+                  )
+                : Image.asset(
+                    'assets/logo.png',
+                    width: size.width * 0.05,
+                  ),
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
@@ -31,7 +35,7 @@ AppBar navbar(Size size, BuildContext context) {
                       fontSize: size.longestSide * 0.02, color: mainColor),
                   children: [
                     TextSpan(
-                        text: "Mv ",
+                        text: "MV ",
                         style: TextStyle(
                           color: secondColor,
                           fontWeight: FontWeight.bold,
@@ -90,7 +94,7 @@ AppBar navbar(Size size, BuildContext context) {
           currentScreen = "aboutus";
         },
         child: Text(
-          "About us",
+          "About Us",
           style: TextStyle(
             fontSize: size.longestSide * 0.013,
             fontWeight: FontWeight.w500,

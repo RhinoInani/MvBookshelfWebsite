@@ -1,3 +1,4 @@
+import 'package:bookshelf_website/components/backgroundColorBlur.dart';
 import 'package:bookshelf_website/components/highlightButtonStyle.dart';
 import 'package:coast/coast.dart';
 import 'package:flutter/material.dart';
@@ -95,17 +96,7 @@ class UpcomingEventsPage extends StatelessWidget {
           ],
         ),
       ),
-      decoration: new BoxDecoration(
-        color: mainColor.withOpacity(0.2),
-        image: new DecorationImage(
-          fit: BoxFit.cover,
-          colorFilter: new ColorFilter.mode(
-            mainColor.withOpacity(0.2),
-            BlendMode.dstATop,
-          ),
-          image: AssetImage('assets/bookshelfBackground3.jpeg'),
-        ),
-      ),
+      decoration: buildBackgroundColorFilter("bookshelfBackground1.jpeg"),
     );
   }
 }

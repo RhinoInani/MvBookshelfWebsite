@@ -24,10 +24,10 @@ class _MeetingsState extends State<Meetings> {
 
   List<String> details = [
     "Social justice short story exploration. \n\nIntroduction of short story contest with La Pluma",
-    "Short story writing workshops with mentors from the Society of Young Inklings.",
+    "Short story writing workshops with mentors from the Society of Young Inklings",
     "None: good luck with finals!",
     "Potential journalist guest speaker!",
-    "African American author panel.",
+    "African American author panel",
     "March madness book exchange",
     "AP Lit/Lang tips and tricks exchange session/cram session",
     "None: good luck with AP Exams!",
