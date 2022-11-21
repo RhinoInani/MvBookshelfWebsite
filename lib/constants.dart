@@ -31,6 +31,7 @@ List<String> imageAboutUs = [
   "assets/people/mulyn.jpeg",
   "assets/people/lavinia.jpeg",
   "assets/people/rohin.jpeg",
+  "assets/people/aparna.jpeg"
 ];
 
 List<String> textAboutUs = [
@@ -40,7 +41,8 @@ List<String> textAboutUs = [
   "Anna is currently a senior and MV Bookshelf’s social media manager. At Monta Vista, she is a member of the varsity field hockey team and is a sports editor for El Estoque. In her free time, she enjoys playing the piano, watching sunrises, and reading memoirs.",
   "Mulyn and is the project manager of the Monta Vista Bookshelf Club. Shes a huge reader and currently working on writing a fantasy novel of my own in my free time!",
   "Lavinia Lei is the Bookshelf’s curriculum head. She enjoys reading all sorts of books (read: fiction), yet her choice genre might just be realistic fiction. Then again, despite being a senior in high school, her favorite book is The Tale of Despereaux; perhaps children’s fantasy is her real number one choice deep down inside. She thinks that reading is underrated and that books are cool, but she is of the humble opinion that PTJ webtoons happen to be the very best. Books are still very cool, though.",
-  "Rohin Inani is a senior and is Mv bookshelf's Web Manager. He loves to read more adventures and fictional books, but also like his share of educational books and stories. In my free time he is a member of the Monta Vista Tennis Team, and also spends a lot of time coding. He also loves to play the guitar, euphonium, and spend time outside with family and friends. If you ever have any questions about anything web related you should go to him."
+  "Rohin Inani is a senior and is Mv bookshelf's Web Manager. He loves to read more adventures and fictional books, but also like his share of educational books and stories. In my free time he is a member of the Monta Vista Tennis Team, and also spends a lot of time coding. He also loves to play the guitar, euphonium, and spend time outside with family and friends. If you ever have any questions about anything web related you should go to him.",
+  "Aparna, senior at Monta Vista, is the head of outreach at MV Bookshelf. In her free time, she enjoys reading a diverse range of genres: from autobiographies to fantasy novels. Her favorite part of reading is the community built amongst other fellow book lovers, culminated through novel-related conversations. Outside of reading, Aparna also enjoys  cooking, baking, and hiking.",
 ];
 
 List<String> headerAboutUs = [
@@ -51,6 +53,7 @@ List<String> headerAboutUs = [
   "Mulyn Kim - Director of Projects",
   "Lavinia Lei - Director of Content",
   "Rohin Inani - Director of Web Dev",
+  "Aparna Narayanan - Director of Outreach",
 ];
 
 String recentSignUp = "";
